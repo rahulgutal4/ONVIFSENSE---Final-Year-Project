@@ -1,0 +1,31 @@
+create database 8838DB;
+use 8838DB;
+
+create table deviceDetails(
+iD int auto_increment primary key,
+deviceName varchar(15),
+devType varchar(10),
+location varchar(50),
+serviceType varchar(50)
+);
+
+create table userData(
+piD int auto_increment primary key,
+devID int references devicedetails.ID on delete cascade,
+deviceName varchar(15),
+width int,
+height int,
+mydate long,
+image mediumBlob,
+state int
+);
+
+create table client(
+ClientId varchar(15) primary key,
+password varchar(200),
+mobile_number varchar(15),
+emailID varchar(20)
+);
+
+
+

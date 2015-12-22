@@ -1,0 +1,168 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.1.1-b09 (branches/2.1-6834; 2011-07-16T17:14:48+0000) JAXWS-RI/2.2.5-promoted-b04 JAXWS/2.2. --><xs:schema xmlns:tns="http://CloudPack/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://CloudPack/">
+
+<xs:element name="CheckUID" type="tns:CheckUID"/>
+
+<xs:element name="CheckUIDResponse" type="tns:CheckUIDResponse"/>
+
+<xs:element name="GetAllDevices" type="tns:GetAllDevices"/>
+
+<xs:element name="GetAllDevicesResponse" type="tns:GetAllDevicesResponse"/>
+
+<xs:element name="GetDevicesByDeviceName" type="tns:GetDevicesByDeviceName"/>
+
+<xs:element name="GetDevicesByDeviceNameResponse" type="tns:GetDevicesByDeviceNameResponse"/>
+
+<xs:element name="GetDevicesByDeviceType" type="tns:GetDevicesByDeviceType"/>
+
+<xs:element name="GetDevicesByDeviceTypeResponse" type="tns:GetDevicesByDeviceTypeResponse"/>
+
+<xs:element name="GetDevicesByServiceType" type="tns:GetDevicesByServiceType"/>
+
+<xs:element name="GetDevicesByServiceTypeResponse" type="tns:GetDevicesByServiceTypeResponse"/>
+
+<xs:element name="SignUp" type="tns:SignUp"/>
+
+<xs:element name="SignUpResponse" type="tns:SignUpResponse"/>
+
+<xs:element name="StreamVideo" type="tns:StreamVideo"/>
+
+<xs:element name="StreamVideoResponse" type="tns:StreamVideoResponse"/>
+
+<xs:element name="getDeviceDetails" type="tns:getDeviceDetails"/>
+
+<xs:element name="getDeviceDetailsResponse" type="tns:getDeviceDetailsResponse"/>
+
+<xs:element name="login" type="tns:login"/>
+
+<xs:element name="loginResponse" type="tns:loginResponse"/>
+
+<xs:complexType name="getDeviceDetails">
+<xs:sequence>
+<xs:element name="eIn" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getDeviceDetailsResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:deviceDetails" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deviceDetails">
+<xs:sequence>
+<xs:element name="deviceID" type="xs:int"/>
+<xs:element name="DeviceName" type="xs:string" minOccurs="0"/>
+<xs:element name="location" type="xs:string" minOccurs="0"/>
+<xs:element name="type" type="xs:string" minOccurs="0"/>
+<xs:element name="service" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="SignUp">
+<xs:sequence>
+<xs:element name="username" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="mob" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="SignUpResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="login">
+<xs:sequence>
+<xs:element name="username" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="loginResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="GetDevicesByDeviceName">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="GetDevicesByDeviceNameResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:deviceDetails" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="GetDevicesByServiceType">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="GetDevicesByServiceTypeResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:deviceDetails" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="GetAllDevices">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="GetAllDevicesResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:deviceDetails" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="StreamVideo">
+<xs:sequence>
+<xs:element name="eIn" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="StreamVideoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:myImage" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="myImage">
+<xs:sequence>
+<xs:element name="img" type="xs:int" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="ww" type="xs:int"/>
+<xs:element name="hh" type="xs:int"/>
+<xs:element name="State" type="xs:string" minOccurs="0"/>
+<xs:element name="service" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="CheckUID">
+<xs:sequence>
+<xs:element name="eIn" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="CheckUIDResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="GetDevicesByDeviceType">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="GetDevicesByDeviceTypeResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:deviceDetails" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
